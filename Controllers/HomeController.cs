@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Mime;
 using System.Threading.Tasks;
 
 namespace DemoAspnetMvcCore.Controllers
@@ -33,7 +34,15 @@ namespace DemoAspnetMvcCore.Controllers
         [Route("politica-de-privacidade")]
         public IActionResult Privacy()
         {
-            return View();
+            //return View();
+
+            //return Json("{'nome':'Leandro'}");
+
+            //var fileBytes = System.IO.File.ReadAllBytes(@"c:\arquivo.text");
+            //var fileName = "Leandro.txt";
+            //return File(fileBytes, MediaTypeNames.Application.Octet, fileName);
+
+            return Content("Conteúdo teste");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
