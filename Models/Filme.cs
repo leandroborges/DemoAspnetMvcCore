@@ -29,6 +29,6 @@ namespace DemoAspnetMvcCore.Models
         [Required(ErrorMessage = "Preencha o campo Avaliação")]
         [Display(Name = "Avaliação")]
         [RegularExpression(@"^[0-5]*$", ErrorMessage = "Somente números de 1 a 5")]
-        public string Avaliacao { get; set; }
+        public int Avaliacao { get; set; }
     }
 }
