@@ -21,6 +21,21 @@ namespace DemoAspnetMvcCore.Controllers
             _logger = logger;
         }
 
+        public IActionResult Index()
+        {
+            var filme = new Filme
+            {
+                Titulo = "Olá",
+                DataLancamento = DateTime.Now,
+                Genero = null,
+                Avaliacao = 10,
+                Valor = 20000
+            };
+
+            return RedirectToAction("Privacy", filme);
+            //return View();
+        }
+
         [Route("")]
         [Route("pagina-inicial")]
         [Route("pagina-inicial/{id}")]
@@ -32,9 +47,19 @@ namespace DemoAspnetMvcCore.Controllers
 
         [Route("privacidade")]
         [Route("politica-de-privacidade")]
-        public IActionResult Privacy()
+        public IActionResult Privacy(Filme filme)
         {
-            //return View();
+            if (ModelState.IsValid)
+            {
+
+            }
+
+            foreach (var error in ModelState.Values.SelectMany(m => m.Errors))
+            {
+                Console.WriteLine(error.ErrorMessage);
+            }
+            
+            return View();
 
             //return Json("{'nome':'Leandro'}");
 
@@ -42,7 +67,7 @@ namespace DemoAspnetMvcCore.Controllers
             //var fileName = "Leandro.txt";
             //return File(fileBytes, MediaTypeNames.Application.Octet, fileName);
 
-            return Content("Conteúdo teste");
+            //return Content("Conteúdo teste");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
