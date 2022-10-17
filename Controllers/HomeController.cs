@@ -36,6 +36,7 @@ namespace DemoAspnetMvcCore.Controllers
             //return View();
         }
 
+        /*
         [Route("")]
         [Route("pagina-inicial")]
         [Route("pagina-inicial/{id}")]
@@ -44,6 +45,7 @@ namespace DemoAspnetMvcCore.Controllers
         {
             return View();
         }
+        */
 
         [Route("privacidade")]
         [Route("politica-de-privacidade")]
