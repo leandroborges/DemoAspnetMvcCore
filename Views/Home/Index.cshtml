@@ -1,19 +1,10 @@
-﻿@model DemoAspnetMvcCore.Models.Filme
-
-
-@{
-    ViewData["Title"] = "Adicioanr novo filme";
+﻿@{
+    ViewData["Title"] = "Home Page";
 }
 
-<h1>@ViewData["Title"]</h1>
+<partial name="_AvisoGeral"/>
 
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Adicionar">
-            <div class="form-group">
-                <label asp-for="Titulo" class="control-label"></label>
-                <input asp-for="Titulo" class="form-control"/>
-            </div>
-        </form>
-    </div>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
