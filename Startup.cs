@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using DemoAspnetMvcCore.Data;
 
 namespace DemoAspnetMvcCore
 {
@@ -24,6 +26,9 @@ namespace DemoAspnetMvcCore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<DemoAspnetMvcCoreContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("DemoAspnetMvcCoreContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
